@@ -44,7 +44,7 @@ color_frame = importdata('input_frames\ColorFrame0102.jpg');
 [color_height, color_width, color_dimension] = size(color_frame);
 % Cortando o arquivo ColorFrame JPG 
 % Posicionamento da selecao para o corte: [xmin ymin width height]
-cropped_color_frame = imcrop(color_frame,[280 0 1324 1080]); %figure(), imshow(cropped_color_frame);
+cropped_color_frame = imcrop(color_frame,[308 0 1304 1080]); %figure(), imshow(cropped_color_frame);
 % Redimensionando o arquivo ColorFrame JPG
 resized_color_frame = imresize(cropped_color_frame, [depth_height depth_width]);
 figure(), imshow(resized_color_frame);
