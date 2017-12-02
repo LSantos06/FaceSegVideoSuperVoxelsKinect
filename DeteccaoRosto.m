@@ -15,16 +15,13 @@ cd('input_dasp\');
 diretorio = dir;
 
 % Pre alocando a imagem binaria
-BW{length(diretorio)} = zeros(512, 512);
+imagem_morfo{length(diretorio)} = zeros(512, 512);
 
-% Pre alocando a imagem binaria dilatada
-BW2{length(diretorio)} = zeros(512, 512);
+% Pre alocando a imagem binaria morfologica
+imagem_bordas{length(diretorio)} = zeros(512, 512);
 
-% Pre alocando a imagem binaria maior elemento
-BW3{length(diretorio)} = zeros(512, 512);
-
-% Pre alocando a imagem binaria maior elemento
-stats{length(diretorio)} = zeros(512, 512);
+% Pre alocando a imagem binaria com a deteccao final
+imagem_deteccao{length(diretorio)} = zeros(512, 512);
 
 % Percorrendo o diretorio das imagens 
 for num = 3:length(diretorio)
@@ -34,18 +31,18 @@ for num = 3:length(diretorio)
     
     % Operacoes morfologicas para facilitar a deteccao da face
     se = strel('square', 2);
-    BW{num-2} = imerode(imagem_binarizada{num-2}, se);     
+    imagem_morfo{num-2} = imerode(imagem_binarizada{num-2}, se);   
     se = strel('square', 20);
-    BW{num-2} = imdilate(BW{num-2}, se);          
+    imagem_morfo{num-2} = imdilate(imagem_morfo{num-2}, se);      
     
     % Deteccao de bordas
-    BW2{num-2} = edge(BW{num-2},'Canny',[]);    
+    imagem_bordas{num-2} = edge(imagem_morfo{num-2},'Canny',[]);    
     
     % Obtem os componentes conectados com maior exentricidade (mais chance
     % de ser um rosto)
-    BW3{num-2} = bwareaopen(BW2{num-2}, 20); 
-    BW3{num-2} = bwpropfilt(BW3{num-2}, 'Eccentricity', [0.8 1]);
-    figure(); imshow(BW3{num-2});
+    imagem_deteccao{num-2} = bwareaopen(imagem_bordas{num-2}, 20); 
+    imagem_deteccao{num-2} = bwpropfilt(imagem_deteccao{num-2}, 'Eccentricity', [0.8 1]);
+    figure(); imshow(imagem_deteccao{num-2});
     pause;    
     
 end % for %
