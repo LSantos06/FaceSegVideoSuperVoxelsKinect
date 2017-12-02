@@ -18,8 +18,11 @@ close all;
 % Uso da palheta de cores escolhida
 Paleta;
 
-% Calibrando a cor de pele
-Calibragem;
+% Detectando cor de pele
+DeteccaoPele;
+
+% Detectando rosto
+DeteccaoRosto;
 
 % Mede o tempo de execucao
 tempo_total = toc();

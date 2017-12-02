@@ -6,7 +6,7 @@
 % Filipe Teixeira 14/0139486
 % Lucas Santos 14/0151010
 
-%% Projeto Final - Binarizacao
+%% Projeto Final - Deteccao Pele
 
 % Obtendo o diretorio das imagens a serem utilizadas 
 cd('input_dasp\');
