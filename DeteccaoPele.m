@@ -67,7 +67,6 @@ for num = 3:length(diretorio)
     % Concatenando e mostrando a imagem original, e a imagem obtida 
     imagens{num-2} = [imagem{num-2}, imagem_pele];
     imshow(imagens{num-2});
-    figure(); imshow(imagem_binarizada{num-2});
     pause;
     
 end % for %

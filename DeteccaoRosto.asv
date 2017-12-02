@@ -44,7 +44,7 @@ for num = 3:length(diretorio)
     pause;      
     
     % Obtem as propriedades dos componentes conectados
-    BW3{num-2} = bwareaopen(BW2{num-2}, 20); 
+    
     BW3{num-2} = bwpropfilt(BW3{num-2}, 'Eccentricity', 2);
     figure(); imshow(BW3{num-2});
     pause;    
