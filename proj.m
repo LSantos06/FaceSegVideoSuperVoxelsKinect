@@ -14,7 +14,7 @@ close all;
 %% Convertendo arquivo DepthFrame MAT em ASCII PGM 16-bits
 
 % Carregando o arquivo DepthFrame MAT
-depth_frame = importdata('input_frames\DepthFrame0157.mat');
+depth_frame = importdata('input_frames\DepthFrame0147.mat');
 % Rotacionando os dados para compatibilidade com o ColorFrame
 depth_frame = rot90(fliplr(depth_frame));
 figure(), imshow(depth_frame*10);
@@ -24,7 +24,7 @@ figure(), imshow(depth_frame*10);
 % Posicionamento da selecao para o corte: [xmin ymin width height]
 cropped_depth_frame = imcrop(depth_frame,[0 32 depth_width 360]); figure(), imshow(cropped_depth_frame*10);
 % Criando novo arquivo ASCII PGM 16-bits
-fileID = fopen('output_frames\DepthFrame0157.pgm', 'w');
+fileID = fopen('output_frames\DepthFrame0147.pgm', 'w');
 % Cabecalho padrao ASCII PGM 16-bits
 fprintf(fileID, 'P2\n');
 fprintf(fileID, depth_width + " " + depth_height + "\n");
@@ -42,7 +42,7 @@ fclose(fileID);
 %% Redimensionar e recortar o ColorFrame para compatibilidade com o DepthFrame
 
 % Carregando o arquivo ColorFrame JPG
-color_frame = importdata('input_frames\ColorFrame0157.jpg');
+color_frame = importdata('input_frames\ColorFrame0147.jpg');
 figure(), imshow(color_frame);
 % Obtendo altura e largura do arquivo ColorFrame JPG
 [color_height, color_width, color_dimension] = size(color_frame);
@@ -53,6 +53,6 @@ cropped_color_frame = imcrop(color_frame,[260 0 1400 color_height]); figure(), i
 resized_color_frame = imresize(cropped_color_frame, [356 512]);
 figure(), imshow(resized_color_frame);
 % Criando novo arquivo JPG
-imwrite(resized_color_frame,'output_frames\ColorFrame0157.png');
+imwrite(resized_color_frame,'output_frames\ColorFrame0147.png');
 
 %% Rodar DASP
