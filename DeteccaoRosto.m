@@ -39,13 +39,12 @@ for num = 3:length(diretorio)
     BW{num-2} = imdilate(BW{num-2}, se);          
     
     % Deteccao de bordas
-    BW2{num-2} = edge(BW{num-2},'Canny',[]);
-    figure(); imshow(BW2{num-2});
-    pause;      
+    BW2{num-2} = edge(BW{num-2},'Canny',[]);    
     
-    % Obtem as propriedades dos componentes conectados
+    % Obtem os componentes conectados com maior exentricidade (mais chance
+    % de ser um rosto)
     BW3{num-2} = bwareaopen(BW2{num-2}, 20); 
-    BW3{num-2} = bwpropfilt(BW3{num-2}, 'Eccentricity', 2);
+    BW3{num-2} = bwpropfilt(BW3{num-2}, 'Eccentricity', [0.8 1]);
     figure(); imshow(BW3{num-2});
     pause;    
     

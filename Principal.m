@@ -24,5 +24,8 @@ DeteccaoPele;
 % Detectando rosto
 DeteccaoRosto;
 
+% Resultado
+Resultado;
+
 % Mede o tempo de execucao
 tempo_total = toc();
