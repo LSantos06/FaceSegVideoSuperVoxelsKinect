@@ -1,24 +1,25 @@
-% Trabalho 1 - Detector de pele 
-% Introducao ao processamento de imagens 2015/2 
-% Lucas Nascimento Santos Souza 14/0151010 %
+%% Universidade de Brasilia
+% Departamento de Ciencia de Computacao
+% Principios de Visao Computacional
+% 2/2017
 
-% Modulo principal %
+% Filipe Teixeira 14/0139486
+% Lucas Santos 14/0151010
 
+%% Projeto Final - Programa Principal
+
+% Mede o tempo de execucao
 tic();
 
-% Limpando o ambiente de trabalho %
+% Limpando o ambiente de trabalho
 clear all;
 close all;
 
-% Uso da palheta esolhida %
+% Uso da palheta de cores escolhida
 Paleta;
 
-% Calibrando a cor de pele %
+% Calibrando a cor de pele
 Calibragem;
 
-% Classificando as imagens de acordo com suas categorias %
-Classificacao;
-
-Fmeasure;
-
+% Mede o tempo de execucao
 tempo_total = toc();
