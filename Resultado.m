@@ -43,6 +43,8 @@ for num = 3:(length(diretorio)-6)
     
     % Resultado final na imagem original
     imshow(imagem_final{num-2});
+    % Escrita da imagem
+    %imwrite(imagem_final{num-2},sprintf('%d.jpg',num));
     pause;
     
 end % for %

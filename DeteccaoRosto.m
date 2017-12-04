@@ -27,6 +27,8 @@ imagem_deteccao{length(diretorio)} = zeros(512, 512);
 for num = 3:length(diretorio)
     % imagem binarizada
     figure(); imshow(imagem_binarizada{num-2});
+    % Escrita da imagem
+    %imwrite(imagem_binarizada{num-2},sprintf('_%d.jpg',num));
     pause;
     
     % Operacoes morfologicas para facilitar a deteccao da face
@@ -43,6 +45,8 @@ for num = 3:length(diretorio)
     imagem_deteccao{num-2} = bwareaopen(imagem_bordas{num-2}, 20); 
     imagem_deteccao{num-2} = bwpropfilt(imagem_deteccao{num-2}, 'Eccentricity', [0.8 1]);
     figure(); imshow(imagem_deteccao{num-2});
+    % Escrita da imagem
+    %imwrite(imagem_deteccao{num-2},sprintf('%d.jpg',num));
     pause;    
     
 end % for %
