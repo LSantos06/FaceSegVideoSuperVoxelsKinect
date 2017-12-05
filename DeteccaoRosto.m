@@ -33,12 +33,18 @@ for num = 3:length(diretorio)
     
     % Operacoes morfologicas para facilitar a deteccao da face
     se = strel('square', 2);
-    imagem_morfo{num-2} = imerode(imagem_binarizada{num-2}, se);   
+    imagem_morfo{num-2} = imerode(imagem_binarizada{num-2}, se);  
+    %figure(); imshow(imagem_morfo{num-2});
+    %pause;
     se = strel('square', 20);
-    imagem_morfo{num-2} = imdilate(imagem_morfo{num-2}, se);      
+    imagem_morfo{num-2} = imdilate(imagem_morfo{num-2}, se);   
+    %figure(); imshow(imagem_morfo{num-2});
+    %pause;
     
     % Deteccao de bordas
     imagem_bordas{num-2} = edge(imagem_morfo{num-2},'Canny',[]);    
+    %figure(); imshow(imagem_bordas{num-2});
+    %pause;
     
     % Obtem os componentes conectados com maior exentricidade (mais chance
     % de ser um rosto)
