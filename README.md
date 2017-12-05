@@ -26,6 +26,6 @@ O trabalho consiste na detecção de faces em vídeos obtidos a partir do Kinect
 <p align="center">
   <img src="results/3.jpg" width="600">
   <br>
-  <t><b>Figura 3</b>: Resultado Final.</t>
+  <t><b>Figura 4</b>: Resultado Final.</t>
   <br>
 </p>
